@@ -1,5 +1,7 @@
 # Catatan Markdown
 
+**Demo live:** [markdown-notes di GitHub Pages](https://kirax-12.github.io/markdown-notes/)
+
 Aplikasi catatan berbasis markdown dengan pratinjau langsung. Tulis di kiri, hasilnya langsung kelihatan di kanan — tanpa server, tanpa akun, semua tersimpan di browser.
 
 ## Fitur
