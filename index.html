@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catatan Markdown — Tulis Cepat, Hasilnya Rapi</title>
+<meta name="description" content="Catatan Markdown dari Remike Dev: tulis pakai markdown, lihat hasilnya langsung, kesimpen otomatis di browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="header-inner">
+    <h1>Catatan <span class="hl">Markdown</span></h1>
+    <p class="app-sub">tulis pakai # dan **, hasilnya langsung kelihatan ↓</p>
+  </div>
+  <div class="tape" aria-hidden="true"><span>catatan markdown · tulis · pratinjau · simpan otomatis · catatan markdown · tulis · pratinjau · simpan otomatis · </span><span>catatan markdown · tulis · pratinjau · simpan otomatis · catatan markdown · tulis · pratinjau · simpan otomatis · </span></div>
+</header>
+
+<main class="layout">
+  <aside class="sidebar card" aria-label="Daftar catatan">
+    <div class="sidebar-head">
+      <h2>Catatanmu</h2>
+      <span class="badge badge-blue" id="note-count">0 catatan</span>
+    </div>
+    <button class="btn btn-primary btn-block" id="new-note-btn" type="button">+ Catatan Baru</button>
+    <ul class="note-list" id="note-list"></ul>
+    <p class="sidebar-hint">Semua catatan kesimpen otomatis di browser ini. Gak ada server, gak ada yang ngintip.</p>
+  </aside>
+
+  <section class="workspace" aria-label="Editor catatan">
+    <div class="toolbar card" role="toolbar" aria-label="Sisipkan format markdown">
+      <button class="tool-btn" type="button" data-format="bold" title="Tebal (**teks**)"><strong>B</strong></button>
+      <button class="tool-btn" type="button" data-format="italic" title="Miring (*teks*)"><em>I</em></button>
+      <button class="tool-btn" type="button" data-format="heading" title="Judul (# Judul)">H1</button>
+      <button class="tool-btn" type="button" data-format="link" title="Tautan [teks](url)">Tautan</button>
+      <button class="tool-btn" type="button" data-format="code" title="Blok kode">Kode</button>
+      <span class="toolbar-spacer"></span>
+      <button class="btn btn-small btn-green" id="download-btn" type="button">Download .md</button>
+      <button class="btn btn-small btn-white" id="copy-html-btn" type="button">Salin HTML</button>
+    </div>
+
+    <div class="panes">
+      <div class="pane card">
+        <label class="pane-label" for="editor">Tulis di sini</label>
+        <textarea id="editor" placeholder="# Judul catatan&#10;&#10;Mulai nulis di sini…" spellcheck="false"></textarea>
+      </div>
+      <div class="pane card">
+        <span class="pane-label">Pratinjau</span>
+        <article class="preview" id="preview" aria-live="polite"></article>
+      </div>
+    </div>
+
+    <p class="statusbar mono">
+      <span id="save-status">Tersimpan ✓</span>
+      <span id="counter">0 kata · 0 karakter</span>
+    </p>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <p>Dibuat oleh <a href="https://github.com/kirax-12" target="_blank" rel="noopener">Remike Dev</a> · Catatan tersimpan lokal di browsermu (localStorage)</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
